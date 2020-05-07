@@ -9,6 +9,7 @@ import android.provider.Settings
 import android.provider.Settings.SettingNotFoundException
 import android.text.TextUtils.SimpleStringSplitter
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -55,6 +56,10 @@ class MainActivity : Activity() {
         }
 
         btnSend.setOnClickListener {
+            val imm: InputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(it.getWindowToken(), 0)
+
+
             val listPhoneNumbers : List<String> =
                 mutableListOf(
                     txtPhoneNumber1.text.toString(), txtPhoneNumber2.text.toString(), txtPhoneNumber3.text.toString(),
