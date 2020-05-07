@@ -1,11 +1,18 @@
 package com.windy.exceptionreport
 
 import android.accessibilityservice.AccessibilityService
+import android.app.ActivityManager
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import java.util.concurrent.Executors
+import java.util.concurrent.ScheduledExecutorService
+import java.util.concurrent.TimeUnit
+
 
 class WhatsAppAccessibilityService : AccessibilityService() {
 
@@ -17,6 +24,13 @@ class WhatsAppAccessibilityService : AccessibilityService() {
     override fun onServiceConnected() {
         super.onServiceConnected()
         Log.i("WhatsAppAccessibilityService", "Connected...")
+
+        val scheduleTaskExecutor : ScheduledExecutorService = Executors.newScheduledThreadPool(1)
+        scheduleTaskExecutor.scheduleAtFixedRate(Runnable {
+            run() {
+                serviceChecker();
+            }
+        }, 0, 5, TimeUnit.SECONDS)
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -28,23 +42,22 @@ class WhatsAppAccessibilityService : AccessibilityService() {
         }
 
         val rootInActiveWindow : AccessibilityNodeInfoCompat = AccessibilityNodeInfoCompat.wrap(rootInActiveWindow)
-//        Log.i("WhatsAppAccessibilityService", "rootInActiveWindow = ${rootInActiveWindow}")
 
-        val messageNodeList : List<AccessibilityNodeInfoCompat> = rootInActiveWindow.findAccessibilityNodeInfosByViewId(ID_ENTRY)
-        if (messageNodeList.isEmpty()) {
-            Log.i("WhatsAppAccessibilityService", "messageNodeList is empty")
-            return
-        }
-
-        val messageField : AccessibilityNodeInfoCompat = messageNodeList[0]
-        if (messageField.text.isEmpty()) {
-            Log.i("WhatsAppAccessibilityService", "messageField is empty")
-            return
-        }
+//        val messageNodeList : List<AccessibilityNodeInfoCompat> = rootInActiveWindow.findAccessibilityNodeInfosByViewId(ID_ENTRY)
+//        if (messageNodeList.isEmpty()) {
+//            Log.i("WhatsAppAccessibilityService", "messageNodeList is empty")
+//            return
+//        }
+//
+//        val messageField : AccessibilityNodeInfoCompat = messageNodeList[0]
+//        if (messageField.text.isEmpty()) {
+//            Log.i("WhatsAppAccessibilityService", "messageField is empty")
+//            return
+//        }
 
         val sendMessageNodeList : List<AccessibilityNodeInfoCompat> = rootInActiveWindow.findAccessibilityNodeInfosByViewId(ID_SEND)
         if (sendMessageNodeList.isEmpty()) {
-            Log.i("WhatsAppAccessibilityService", "messageNodeList is empty")
+            Log.i("WhatsAppAccessibilityService", "sendMessageNodeList is empty")
             return
         }
 
@@ -74,6 +87,23 @@ class WhatsAppAccessibilityService : AccessibilityService() {
     override fun onUnbind(intent: Intent?): Boolean {
         Log.i("WhatsAppAccessibilityService", "onUnbind...")
         return super.onUnbind(intent)
+    }
+
+    fun serviceChecker() {
+        if (!isActivityRunning(MainActivity::class.java)!!) {
+            Log.i("WhatsAppAccessibilityService", "disableSelf()")
+            disableSelf()
+        }
+    }
+
+    protected open fun isActivityRunning(activityClass: Class<*>): Boolean? {
+        val activityManager = baseContext.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val tasks = activityManager.getRunningTasks(Int.MAX_VALUE)
+        for (task in tasks) {
+            if (activityClass.canonicalName.equals(task.baseActivity!!.className, ignoreCase = true))
+                return true
+        }
+        return false
     }
 
 }
