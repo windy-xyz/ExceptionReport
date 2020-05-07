@@ -20,6 +20,16 @@
             android:paddingBottom="150dp"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:src="@drawable/wcs"></ImageView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                ></View>
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
