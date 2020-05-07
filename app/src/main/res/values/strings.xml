@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Exception Report</string>
+    <string name="button_send">Send</string>
+    <string name="edit_text_hint_message">Message</string>
+    <string name="edit_text_hint_phone_number">Phone Number</string>
+</resources>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_text_hint_message"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:text=""
+                    android:lines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_marginVertical="16dp"
+                android:layout_width="match_parent"
+                android:background="@android:color/black"
+                android:layout_height="1dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 1"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 2"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 3"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 4"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 5"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 6"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 7"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 8"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 9"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number 10"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_phone_number10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:inputType="numberDecimal"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/button_send"/>
+
+</RelativeLayout>
